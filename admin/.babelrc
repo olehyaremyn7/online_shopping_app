@@ -1,0 +1,15 @@
+{
+  "presets": [
+    ["@babel/preset-env", {
+      "targets": [
+        "last 5 versions",
+        {
+          "node": "current"
+        }
+      ]
+    }]
+  ],
+  "plugins": [
+    "@babel/plugin-proposal-class-properties"
+  ]
+}
