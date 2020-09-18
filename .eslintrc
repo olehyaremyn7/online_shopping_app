@@ -17,7 +17,8 @@
     "no-trailing-spaces": "off",
     "operator-linebreak": "off",
     "eol-last": "off",
-    "max-len": "off"
+    "max-len": "off",
+    "new-cap": "off"
   },
   "plugins": [
     "jest"
