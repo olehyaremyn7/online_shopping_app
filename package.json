@@ -1,0 +1,46 @@
+{
+  "name": "online_shopping_app",
+  "version": "1.0.0",
+  "description": "Web application for online shopping. /NodeJS/ExpressJS/MongoDB/",
+  "main": "server.js",
+  "engines": {
+    "node": "12.18.3",
+    "npm": "6.14.6"
+  },
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/olehyaremyn7/online_shopping_app.git"
+  },
+  "keywords": [
+    "store",
+    "shopping",
+    "web",
+    "app",
+    "fullstack",
+    "rest",
+    "nodejs",
+    "expressjs",
+    "mongodb",
+    "javascript",
+    "ESLint",
+    "Jest"
+  ],
+  "author": "Oleh Yaremyn <oleh_yaremyn@ukr.net>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/olehyaremyn7/online_shopping_app/issues"
+  },
+  "homepage": "https://github.com/olehyaremyn7/online_shopping_app#readme",
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jest": "^24.0.1",
+    "jest": "^26.4.2"
+  }
+}
