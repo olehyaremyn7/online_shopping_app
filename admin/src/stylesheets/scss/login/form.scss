@@ -1,0 +1,40 @@
+@import "src/stylesheets/scss/variables";
+@import "src/stylesheets/scss/mixins";
+
+.login {
+  &__form {
+    @include AuthFormBoxShadow;
+    height: 500px;
+    width: 500px;
+    margin: 250px auto;
+    padding: 35px 50px;
+
+    & h1 {
+      text-align: center;
+      font-size: 40px;
+    }
+
+    & form {
+      margin: 50px auto;
+      padding: 0 20px;
+
+      & .form-control {
+        font-size: 20px;
+        margin-bottom: 50px;
+
+        & label {
+          @include AuthFormLabel;
+        }
+
+        & input {
+          @include AuthFormInput;
+        }
+      }
+
+      & button {
+        margin-top: -5px;
+        @include AuthFormsSubmitBtn()
+      }
+    }
+  }
+}

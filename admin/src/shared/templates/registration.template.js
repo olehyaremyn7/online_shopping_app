@@ -2,8 +2,8 @@ export function createRegisterHeaderTemplate() {
     return `
         <h1>Aligator Store Administration</h1>
         <div class="links">
-            <a class="button" href="#">Login</a>
-            <a class="button" href="#">Registration</a>
+            <a class="button" href="#login">Login</a>
+            <a class="button active-link" href="#">Registration</a>
         </div>
     `
 }

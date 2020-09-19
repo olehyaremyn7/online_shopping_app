@@ -1,12 +1,12 @@
 import {$} from '@core/DOM/DOM'
 
-export class Registration {
+export class Login {
     constructor(options) {
         this.components = options.components || []
     }
 
     getRoot() {
-        const $root = $.create('div', 'registration')
+        const $root = $.create('div', 'login')
 
         this.components = this.components.map(Component => {
             const $el = $.create('div', Component.className)

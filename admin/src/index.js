@@ -1,10 +1,11 @@
 import './stylesheets/scss/index.scss'
-import {Registration} from '@shared/components/registration/Registration'
-import {RegistrationHeader} from '@shared/components/registration/registration-header/RegistrationHeader'
-import {RegistrationForm} from '@shared/components/registration/registration-form/RegistrationForm'
+import {Router} from '@core/routing/Router'
+import {StartPage} from '@/pages/StartPage'
+import {LoginPage} from '@/pages/LoginPage'
+import {RegistrationPage} from '@/pages/RegistrationPage'
 
-const registration = new Registration('#app', {
-    components: [RegistrationHeader, RegistrationForm]
+new Router('#app', {
+    start: StartPage,
+    login: LoginPage,
+    registration: RegistrationPage
 })
-
-registration.render()

@@ -1,3 +1,12 @@
+@mixin startButtons($background: white, $color: black) {
+  padding: 20px 40px;
+  background: $background;
+  font-size: 30px;
+  color: $color;
+  font-weight: 500;
+  cursor: pointer;
+}
+
 @mixin headerLinks($background: black, $color: white) {
   padding: 10px 20px;
   font-size: 15px;
