@@ -33,14 +33,14 @@ module.exports.loginController = async (req, res) => {
 
 module.exports.registrationController = async (req, res) => {
     try {
-        const {username, email, password, secretKey} = req.body
+        const {username, email, password, key} = req.body
         const candidate = await Admin.findOne({email})
 
         if (candidate) {
             return res.status(409).json({message: 'This email is already in use. Enter another email'})
         }
 
-        if (secretKey !== config.secretKey) {
+        if (key !== config.secretKey) {
             return res.status(510)
         }
 

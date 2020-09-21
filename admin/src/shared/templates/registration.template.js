@@ -13,11 +13,11 @@ export function createRegisterFormTemplate() {
         <h1>Registration</h1>
         <form id="registration-form">
             <div class="form-control">
-                <label for="name">Name</label>
-                <input class="name" 
+                <label for="username">Name</label>
+                <input class="username" 
                        type="text" 
-                       id="name"
-                       name="name">
+                       id="username"
+                       name="username">
             </div>
 
             <div class="form-control">

@@ -32,7 +32,13 @@ module.exports = {
     },
     devServer: {
         port: 3000,
-        hot: isDev
+        hot: isDev,
+        historyApiFallback: true,
+        proxy: {
+            '/api': {
+                target: 'http://localhost:5000'
+            },
+        }
     },
     resolve: {
       extensions: ['.js'],

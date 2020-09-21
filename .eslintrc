@@ -18,7 +18,8 @@
     "operator-linebreak": "off",
     "eol-last": "off",
     "max-len": "off",
-    "new-cap": "off"
+    "new-cap": "off",
+    "no-debugger": "off"
   },
   "plugins": [
     "jest"

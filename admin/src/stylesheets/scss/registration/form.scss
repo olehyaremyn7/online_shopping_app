@@ -30,6 +30,18 @@
         & input {
           @include AuthFormInput;
         }
+
+        & .invalid {
+
+        }
+
+        .validation-error {
+          font-size: 13px;
+          color: red;
+          margin-top: 6px;
+          font-weight: 500;
+          margin-bottom: -20px;
+        }
       }
 
       & button {

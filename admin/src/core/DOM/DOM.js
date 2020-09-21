@@ -39,6 +39,14 @@ class DOM {
 
         return this
     }
+
+    find(selector, option) {
+        if (!option) {
+            return $(this.$el.querySelector(selector))
+        } else {
+            return this.$el.querySelector(selector)
+        }
+    }
 }
 
 export function $(selector) {
