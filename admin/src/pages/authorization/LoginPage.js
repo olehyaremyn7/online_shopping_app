@@ -1,12 +1,12 @@
 import {Page} from '@core/page/Page'
 import {Login} from '@shared/components/login/Login'
-import {LoginHeader} from '@shared/components/login/login-header/LoginHeader'
+import {Header} from '@shared/components/header/Header'
 import {LoginForm} from '@shared/components/login/login-form/LoginForm'
 
 export class LoginPage extends Page {
     getRoot() {
         this.login = new Login({
-            components: [LoginHeader, LoginForm]
+            components: [Header, LoginForm]
         })
 
         return this.login.getRoot()

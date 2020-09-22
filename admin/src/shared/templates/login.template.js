@@ -1,13 +1,3 @@
-export function createLoginHeaderTemplate() {
-    return `
-        <h1>Aligator Store Administration</h1>
-        <div class="links">
-            <a class="button active-link" href="#">Login</a>
-            <a class="button" href="#registration">Registration</a>
-        </div>
-    `
-}
-
 export function createLoginFormTemplate() {
     return `
         <h1>Login</h1>

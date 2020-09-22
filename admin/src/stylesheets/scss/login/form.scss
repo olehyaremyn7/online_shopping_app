@@ -2,6 +2,13 @@
 @import "src/stylesheets/scss/mixins";
 
 .login {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  overflow-y: hidden;
+
   &__form {
     @include AuthFormBoxShadow;
     height: 500px;

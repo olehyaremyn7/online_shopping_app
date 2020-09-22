@@ -1,5 +1,6 @@
 import {$} from '@core/DOM/DOM'
 import {ActiveRoute} from '@core/routing/ActiveRoute'
+import {AuthGuard} from '@shared/classes/Authorization.guard'
 
 export class Router {
     constructor(selector, routes) {
@@ -47,5 +48,9 @@ function currentRoute(routes) {
             return routes.login
         case 'registration':
             return routes.registration
+        case 'dashboard':
+            if (AuthGuard.canActivate()) {
+                return routes.dashboard
+            }
     }
 }

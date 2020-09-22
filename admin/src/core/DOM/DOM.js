@@ -47,6 +47,21 @@ class DOM {
             return this.$el.querySelector(selector)
         }
     }
+
+    get data() {
+        return this.$el.dataset
+    }
+
+    attr(name, value, option) {
+        if (value) {
+            this.$el.setAttribute(name, value)
+            return this
+        } else if (option) {
+            this.$el.removeAttribute(name)
+            return this
+        }
+        return this.$el.getAttribute(name)
+    }
 }
 
 export function $(selector) {
