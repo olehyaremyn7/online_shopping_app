@@ -1,0 +1,33 @@
+@import "src/stylesheets/scss/variables";
+@import "src/stylesheets/scss/mixins";
+
+.admin__header {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: $header-height;
+  padding: 25px 25px;
+  display: flex;
+  justify-content: space-between;
+  background: $header-background;
+
+  & h1 {
+    font-size: 20px;
+    margin-top: 0;
+    color: white;
+  }
+
+  & .links {
+
+    & .button {
+      text-decoration: none;
+      margin: 0 10px 0 10px;
+      @include headerLinks();
+    }
+
+    & .active-link {
+      border-bottom: 3px solid white;
+    }
+  }
+}

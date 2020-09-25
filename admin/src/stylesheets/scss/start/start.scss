@@ -1,0 +1,54 @@
+@import "src/stylesheets/scss/variables";
+@import "src/stylesheets/scss/mixins";
+
+.start {
+  &__block {
+    position: fixed;
+    background: $start-block-background;
+    width: 100%;
+    height: 800px;
+    margin: 100px auto;
+    padding: 80px 150px;
+  }
+
+  &__brand {
+    text-align: center;
+    font-size: 50px;
+  }
+
+  &__module {
+    text-align: center;
+    font-size: 40px;
+    margin-top: -40px;
+  }
+
+  &__text {
+    text-align: center;
+    font-size: 30px;
+    margin-top: 50px;
+
+    & .intro {
+      margin-bottom: 10px;
+    }
+
+    & .tips {
+
+    }
+  }
+
+  & hr {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  &__buttons {
+    text-align: center;
+    padding-top: 20px;
+
+    & .button {
+      text-decoration: none;
+      margin: 0 15px 0 15px;
+      @include startButtons();
+    }
+  }
+}

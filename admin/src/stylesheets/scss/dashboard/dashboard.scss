@@ -1,0 +1,29 @@
+@import "src/stylesheets/scss/variables";
+@import "src/stylesheets/scss/mixins";
+
+.dashboard {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  overflow-y: hidden;
+
+  &__stats {
+    margin: 100px 30px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__block {
+    @include AuthFormBoxShadow;
+    height: 880px;
+    width: 910px;
+
+    & h1 {
+      font-size: 40px;
+      font-weight: 600;
+      padding-left: 30px;
+    }
+  }
+}
