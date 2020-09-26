@@ -9,7 +9,10 @@ class DashboardService {
         try {
             const request = new Request(`${this.url}`, {
                 method: 'GET',
-                headers: tokenInterceptor.intercept()
+                headers: {
+                    'Content-Type': 'application/json',
+                    ...tokenInterceptor.intercept()
+                }
             })
 
             return useRequest(request)

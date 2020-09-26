@@ -52,5 +52,11 @@ function currentRoute(routes) {
             if (AuthGuard.canActivate()) {
                 return routes.dashboard
             }
+            break
+        case 'add':
+            if (AuthGuard.canActivate()) {
+                return routes.add
+            }
+            break
     }
 }

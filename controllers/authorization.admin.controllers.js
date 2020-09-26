@@ -29,7 +29,7 @@ module.exports.loginController = async (req, res) => {
     } catch (e) {
         error(res, e)
     }
-};
+}
 
 module.exports.registrationController = async (req, res) => {
     try {
@@ -53,4 +53,4 @@ module.exports.registrationController = async (req, res) => {
     } catch (e) {
         error(res, e)
     }
-};
+}
