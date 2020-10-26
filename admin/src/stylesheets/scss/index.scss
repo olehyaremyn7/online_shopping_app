@@ -6,6 +6,10 @@
 @import "login/form";
 @import "registration/form";
 @import "dashboard/dashboard";
+@import "add/form";
+@import "items/card";
+@import "partials/loader";
+@import "edit/form";
 
 * {
   margin: 0;
@@ -24,4 +28,20 @@ body {
   max-width: 100%;
   font-size: .8rem;
   color: white;
+}
+
+.validation-error {
+  font-size: 13px;
+  color: red;
+  margin-top: 6px;
+  font-weight: 500;
+  margin-bottom: -20px;
+}
+
+.no_items_text {
+  font-size: 40px;
+  font-weight: 700;
+  position: relative;
+  top: 100%;
+  left: 160%;
 }

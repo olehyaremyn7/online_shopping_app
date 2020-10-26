@@ -4,3 +4,4 @@ node_modules
 config/keys.dev.config.js
 admin/dist
 admin/node_modules
+uploads

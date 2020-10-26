@@ -12,6 +12,13 @@ export class Form {
         return value
     }
 
+    setValue(data) {
+        const value = data
+        Object.keys(this.controls).forEach(control => {
+            this.form[control].value = value[control]
+        })
+    }
+
     isValid() {
         let isFormValid = true
 

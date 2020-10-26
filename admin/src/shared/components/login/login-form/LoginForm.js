@@ -1,5 +1,5 @@
 import {LoginComponent} from '@core/authorization/LoginComponent'
-import {createLoginFormTemplate} from '@shared/templates/login.template'
+import {createLoginFormTemplate} from '@shared/templates/authorization/login.template'
 import {Form} from '@core/form/Form'
 import {Validators} from '@core/form/Validators'
 import {AuthorizationAPI} from '@shared/services/Authorization.service'

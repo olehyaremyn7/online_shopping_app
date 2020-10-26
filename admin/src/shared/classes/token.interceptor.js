@@ -9,7 +9,6 @@ class TokenInterceptor {
     intercept() {
         if (this.authorizationService.isAuthenticated()) {
             return {
-                'Content-Type': 'application/json',
                 'Authorization': this.authorizationService.getToken()
             }
         } else {
