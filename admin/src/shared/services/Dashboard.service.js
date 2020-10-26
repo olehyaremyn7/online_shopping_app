@@ -5,7 +5,7 @@ class DashboardService {
         this.url = DashboardUrl
     }
 
-    async getAll() {
+    async fetch() {
         try {
             const request = new Request(`${this.url}`, {
                 method: 'GET',

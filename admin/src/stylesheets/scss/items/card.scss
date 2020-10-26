@@ -1,0 +1,77 @@
+@import "src/stylesheets/scss/variables";
+@import "src/stylesheets/scss/mixins";
+
+.items {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  overflow-y: auto;
+
+  &__cards {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 0;
+    grid-row-gap: 30px;
+    padding: 150px 0 60px 100px;
+  }
+
+  &__card {
+    width: 348px;
+    height: 528px;
+    box-shadow: 0 0 10px rgba(0,0,0, 0.1);
+    background-color: white;
+    margin-bottom: 40px;
+  }
+
+  &__card-image img {
+    width: 348px;
+    max-height: 348px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &__card-body {
+    padding: 15px 15px;
+  }
+
+  &__card-title a {
+    font-size: 25px;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+  }
+
+  &__card-price {
+    font-size: 28px;
+    color: black;
+    margin-top: 20px;
+  }
+
+  &__card-footer {
+    display: flex;
+    justify-content: left;
+    padding: 10px 15px;
+
+    & .button {
+      padding: 12px 30px;
+      font-size: 15px;
+      font-weight: 500;
+      margin-right: 15px;
+      cursor: pointer;
+    }
+
+    & .edit {
+      background: $warning-color;
+      color: black;
+    }
+
+    & .remove {
+      background: $warm-color;
+      color: black;
+    }
+  }
+}

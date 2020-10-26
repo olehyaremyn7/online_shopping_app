@@ -1,4 +1,4 @@
-import {Page} from '@core/page/Page'
+import {Page} from '@shared/classes/Page'
 import {Registration} from '@shared/components/registration/Registration'
 import {Header} from '@shared/components/header/Header'
 import {RegistrationForm} from '@shared/components/registration/registration-form/RegistrationForm'

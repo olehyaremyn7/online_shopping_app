@@ -21,23 +21,79 @@ class ProductService {
                 headers: tokenInterceptor.intercept()
             })
 
-            return useRequest(request)
+            const response = await fetch(request)
+            return await response.json()
         } catch (e) {
             alert('Error:' + e)
         }
     }
-}
 
-async function useRequest(request) {
-    const response = await fetch(request)
-    if (response.ok) {
-        const json = await response.json()
-        return {
-            status: response.ok,
-            ...json
+    async getById(id) {
+        try {
+            const request = new Request(`${this.url}/${id}`, {
+                method: 'GET',
+                headers: tokenInterceptor.intercept()
+            })
+
+            const response = await fetch(request)
+            return await response.json()
+        } catch (e) {
+            alert('Error:' + e)
         }
-    } else {
-        return await response.json()
+    }
+
+    async fetch() {
+        try {
+            const request = new Request(`${this.url}`, {
+                method: 'GET',
+                headers: tokenInterceptor.intercept()
+            })
+
+            const response = await fetch(request)
+            return await response.json()
+        } catch (e) {
+            alert('Error:' + e)
+        }
+    }
+
+    async remove(id) {
+        try {
+            const request = new Request(`${this.url}/${id}`, {
+                method: 'DELETE',
+                headers: tokenInterceptor.intercept()
+            })
+
+            const response = await fetch(request)
+            return await response.json()
+        } catch (e) {
+            alert('Error:' + e)
+        }
+    }
+
+    async update(id, product) {
+        try {
+            const formData = new FormData()
+
+            if (product.image) {
+                formData.append('image', product.image, product.image.name)
+            }
+
+            formData.append('title', product.title)
+            formData.append('category', product.category)
+            formData.append('description', product.description)
+            formData.append('price', product.price)
+
+            const request = new Request(`${this.url}/${id}`, {
+                method: 'PATCH',
+                body: formData,
+                headers: tokenInterceptor.intercept()
+            })
+
+            const response = await fetch(request)
+            return await response.json()
+        } catch (e) {
+            alert('Error:' + e)
+        }
     }
 }
 

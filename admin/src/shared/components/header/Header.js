@@ -1,5 +1,5 @@
 import {HeaderComponent} from '@core/partials/HeaderComponent'
-import {createHeaderTemplate} from '@shared/templates/header.template'
+import {createHeaderTemplate} from '@shared/templates/partials/header.template'
 import {ActiveRoute} from '@core/routing/ActiveRoute'
 import {$} from '@core/DOM/DOM'
 import {AuthorizationAPI} from '@shared/services/Authorization.service'

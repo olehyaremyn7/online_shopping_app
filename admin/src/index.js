@@ -4,6 +4,8 @@ import {LoginPage} from '@/pages/authorization/LoginPage'
 import {RegistrationPage} from '@/pages/authorization/RegistrationPage'
 import {DashboardPage} from '@/pages/main/DashboardPage'
 import {AddPage} from '@/pages/main/AddPage'
+import {ItemsPage} from '@/pages/main/ItemsPage'
+import {EditPage} from '@/pages/main/EditPage'
 import './stylesheets/scss/index.scss'
 
 new Router('#app', {
@@ -11,5 +13,7 @@ new Router('#app', {
     login: LoginPage,
     registration: RegistrationPage,
     dashboard: DashboardPage,
-    add: AddPage
+    add: AddPage,
+    items: ItemsPage,
+    edit: EditPage
 })

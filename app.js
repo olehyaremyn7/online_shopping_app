@@ -7,6 +7,7 @@ const passport = require('passport')
 const AdminAuthorizationRouter = require('./routes/authorization.admin.routes')
 const AdminDashboardRouter = require('./routes/dashboard.admin.routes')
 const AdminProductRouter = require('./routes/product.admin.routes')
+const errorHandler = require('./middleware/errors.middleware')
 
 const app = express()
 
@@ -22,5 +23,7 @@ app.use(cors())
 app.use('/api/admin/authorization', AdminAuthorizationRouter)
 app.use('/api/admin/dashboard', AdminDashboardRouter)
 app.use('/api/admin/product', AdminProductRouter)
+
+app.use(errorHandler)
 
 module.exports = app

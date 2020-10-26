@@ -1,6 +1,7 @@
 import {$} from '@core/DOM/DOM'
 import {ActiveRoute} from '@core/routing/ActiveRoute'
 import {AuthGuard} from '@shared/classes/Authorization.guard'
+import {Loader} from '@shared/components/loader/Loader'
 
 export class Router {
     constructor(selector, routes) {
@@ -12,6 +13,7 @@ export class Router {
         this.routes = routes
         this.changePageHandler = this.changePageHandler.bind(this)
         this.page = null
+        this.loader = new Loader()
 
         this.init()
     }
@@ -21,16 +23,18 @@ export class Router {
         this.changePageHandler()
     }
 
-    changePageHandler() {
+    async changePageHandler() {
         if (this.page) {
             this.page.destroy()
         }
 
-        this.$placeholder.clear()
+        this.$placeholder.clear().append(this.loader)
         const Page = currentRoute(this.routes)
-        this.page = new Page(ActiveRoute.param)
+        this.page = new Page()
 
-        this.$placeholder.append(this.page.getRoot())
+        const root = await this.page.getRoot()
+
+        this.$placeholder.clear().append(root)
         this.page.afterRender()
     }
 
@@ -56,6 +60,16 @@ function currentRoute(routes) {
         case 'add':
             if (AuthGuard.canActivate()) {
                 return routes.add
+            }
+            break
+        case 'items':
+            if (AuthGuard.canActivate()) {
+                return routes.items
+            }
+            break
+        case `edit/${ActiveRoute.param}`:
+            if (AuthGuard.canActivate()) {
+                return routes.edit
             }
             break
     }

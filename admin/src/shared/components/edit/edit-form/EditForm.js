@@ -1,32 +1,36 @@
-import {AddComponent} from '@core/main/AddComponent'
-import {createAddFormTemplate} from '@shared/templates/main/add.template'
+import {EditComponent} from '@core/main/EditComponent'
+import {createEditFormTemplate} from '@shared/templates/main/edit.template'
 import {Form} from '@core/form/Form'
 import {Validators} from '@core/form/Validators'
 import {ProductAPI} from '@shared/services/Product.service'
+import {ActiveRoute} from '@core/routing/ActiveRoute'
 
-export class AddForm extends AddComponent {
-    static className = 'add__form'
+export class EditForm extends EditComponent {
+    static className = 'update__form'
 
     constructor($root) {
         super($root, {
-            name: 'AddForm',
+            name: 'EditForm',
             listeners: ['submit']
         })
     }
 
     toHTML() {
-        return createAddFormTemplate()
+        return createEditFormTemplate()
     }
 
     init() {
         super.init()
-        this.$form = this.$root.find('#add-form', true)
+        this.$form = this.$root.find('#update-form', true)
         this.form = new Form(this.$form, {
             title: [Validators.required],
             category: [Validators.required],
             price: [Validators.required, Validators.minLength(1)],
             description: [Validators.required, Validators.minLength(10)]
         })
+        const fetchData = JSON.parse(localStorage.getItem('item'))
+        localStorage.setItem('item', null)
+        this.form.setValue(fetchData)
     }
 
     async onSubmit(event) {
@@ -39,9 +43,10 @@ export class AddForm extends AddComponent {
                 image
             }
 
-            await ProductAPI.create(product).then(response => {
+            await ProductAPI.update(ActiveRoute.param, product).then(response => {
                 this.form.clear()
                 alert(response.message)
+                ActiveRoute.navigate('items')
             })
         }
     }

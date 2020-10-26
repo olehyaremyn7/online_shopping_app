@@ -1,6 +1,6 @@
-import {Page} from '@core/page/Page'
+import {Page} from '@shared/classes/Page'
 import {$} from '@core/DOM/DOM'
-import {createStartTemplate} from '@shared/templates/start.template'
+import {createStartTemplate} from '@shared/templates/authorization/start.template'
 
 export class StartPage extends Page {
     getRoot() {
